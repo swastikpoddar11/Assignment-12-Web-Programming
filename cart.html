@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart | NovaTech</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div>🚀 Special Launch Offer: Use coupon code <strong>NOVA20</strong> for 20% off all orders!</div>
+      <div><a href="contact.html">Need Help? Contact Support</a></div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">⚡</span>
+        <span>NovaTech</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="cart.html" class="nav-link active">Cart</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div id="userNavSlot"></div>
+        <a href="cart.html" class="btn-icon" aria-label="Shopping Cart">
+          <span>🛒</span>
+          <span class="cart-badge" style="display:none;">0</span>
+        </a>
+        <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Hero / Breadcrumbs -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span style="color:var(--text-main); font-weight:600;">Shopping Cart</span>
+      </div>
+      <h1 style="font-family:var(--font-display); font-size:2.2rem; font-weight:700;">Your Shopping Cart</h1>
+      <p style="color:var(--text-muted);">Review your selected items, apply promotional codes, and proceed to checkout.</p>
+    </div>
+  </section>
+
+  <!-- Cart Content -->
+  <main class="container">
+    <div id="cartActiveView" class="cart-layout">
+      <!-- Items List Column -->
+      <section>
+        <div class="cart-table-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:1rem; border-bottom:1px solid var(--border); margin-bottom:1rem;">
+            <h3 style="font-size:1.15rem; font-weight:700;">Cart Items (<span id="cartCountHeader">0</span>)</h3>
+            <button id="clearCartBtn" class="btn-sm btn-danger">Clear All</button>
+          </div>
+
+          <!-- Items injected via JS -->
+          <div id="cartItemsList"></div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--border);">
+            <a href="products.html" class="btn btn-secondary">
+              ← Continue Shopping
+            </a>
+            <span style="font-size:0.85rem; color:var(--text-muted);">Prices updated in real-time</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Order Summary Column -->
+      <aside>
+        <div class="order-summary-card">
+          <h3 class="summary-title">Order Summary</h3>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="summarySubtotal" style="font-weight:600; color:var(--text-main);">$0.00</span>
+          </div>
+
+          <div class="summary-row" id="summaryDiscountRow" style="display:none; color:var(--success);">
+            <span id="summaryDiscountLabel">Coupon Discount</span>
+            <span id="summaryDiscount" style="font-weight:700;">-$0.00</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Estimated Shipping</span>
+            <span id="summaryShipping" style="font-weight:600; color:var(--text-main);">$0.00</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Estimated Tax (8%)</span>
+            <span id="summaryTax" style="font-weight:600; color:var(--text-main);">$0.00</span>
+          </div>
+
+          <!-- Promo Code Section -->
+          <div style="margin:1.25rem 0; padding:1rem 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+            <label for="couponInput" style="font-size:0.85rem; font-weight:700; display:block; margin-bottom:0.4rem;">
+              Have a Promo Code?
+            </label>
+            <div class="coupon-box">
+              <input type="text" id="couponInput" class="coupon-input" placeholder="e.g. NOVA20">
+              <button id="applyCouponBtn" class="btn btn-primary btn-sm">Apply</button>
+            </div>
+            <div id="couponStatusMessage" style="font-size:0.8rem; margin-top:0.35rem;"></div>
+            <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.35rem;">
+              💡 Try: <strong>NOVA20</strong> (20% off) or <strong>WELCOME10</strong> (10% off)
+            </div>
+          </div>
+
+          <div class="summary-row total-row">
+            <span>Estimated Total</span>
+            <span id="summaryTotal" style="color:var(--primary);">$0.00</span>
+          </div>
+
+          <a href="checkout.html" class="btn btn-primary btn-lg btn-block" style="margin-top:1.5rem;">
+            Proceed to Checkout ➔
+          </a>
+
+          <div style="text-align:center; margin-top:1rem; font-size:0.8rem; color:var(--text-muted);">
+            🔒 Guaranteed 256-Bit SSL Encrypted Checkout
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Empty Cart State -->
+    <div id="emptyCartView" style="display:none; text-align:center; padding:5rem 1rem; background:#fff; border-radius:var(--radius-xl); border:1px solid var(--border); margin:3rem 0;">
+      <div style="font-size:4rem; margin-bottom:1rem;">🛒</div>
+      <h2 style="font-family:var(--font-display); font-size:1.8rem; margin-bottom:0.75rem;">Your Cart is Empty</h2>
+      <p style="color:var(--text-muted); max-width:440px; margin:0 auto 2rem;">
+        Looks like you haven't added anything to your cart yet. Explore our top-tier devices and peripherals parsed from XML.
+      </p>
+      <a href="products.html" class="btn btn-primary btn-lg">
+        Explore Products Catalog ➔
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>⚡ NovaTech</h3>
+        <p style="margin-bottom:1.25rem;">
+          Architecting next-generation shopping experiences using clean HTML5, CSS3, modern ES6 JavaScript, and client-side XML DOM parsing.
+        </p>
+        <span class="badge badge-primary">XML DOM Powered</span>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">All Products</a>
+          <a href="cart.html">Shopping Cart</a>
+          <a href="checkout.html">Checkout</a>
+          <a href="contact.html">Support &amp; FAQ</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Customer Area</h4>
+        <div class="footer-links">
+          <a href="auth.html">Sign In / Register</a>
+          <a href="cart.html">View My Cart</a>
+          <a href="contact.html">Order Tracking</a>
+          <a href="contact.html">Returns Policy</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Tech Specs</h4>
+        <p style="font-size:0.85rem; margin-bottom:1rem;">
+          Data source: <code>data/products.xml</code><br>
+          Parser: <code>DOMParser (text/xml)</code><br>
+          State: <code>LocalStorage</code>
+        </p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div>&copy; 2026 NovaTech Inc. All rights reserved. Professional E-Commerce Engineering.</div>
+      <div>Designed with HTML5, CSS3, JavaScript &amp; XML.</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/xml-loader.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCart();
+
+      // Listen for storage changes or custom cart updates
+      window.addEventListener('cartUpdated', renderCart);
+
+      document.getElementById('clearCartBtn').addEventListener('click', () => {
+        if (confirm('Are you sure you want to clear your shopping cart?')) {
+          window.cartManager.clearCart();
+          renderCart();
+        }
+      });
+
+      document.getElementById('applyCouponBtn').addEventListener('click', () => {
+        const input = document.getElementById('couponInput');
+        const status = document.getElementById('couponStatusMessage');
+        const res = window.cartManager.applyCoupon(input.value);
+
+        if (res.success) {
+          status.style.color = 'var(--success)';
+          status.textContent = `Applied: ${res.coupon.code} (${res.coupon.desc})`;
+          renderCart();
+        } else {
+          status.style.color = 'var(--danger)';
+          status.textContent = res.message;
+        }
+      });
+    });
+
+    function renderCart() {
+      const items = window.cartManager.getItems();
+      const activeView = document.getElementById('cartActiveView');
+      const emptyView = document.getElementById('emptyCartView');
+
+      if (items.length === 0) {
+        activeView.style.display = 'none';
+        emptyView.style.display = 'block';
+        return;
+      }
+
+      activeView.style.display = 'grid';
+      emptyView.style.display = 'none';
+
+      document.getElementById('cartCountHeader').textContent = window.cartManager.getTotalCount();
+
+      // Render Item rows
+      const list = document.getElementById('cartItemsList');
+      list.innerHTML = items.map(item => `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.title}" class="cart-item-img">
+          <div>
+            <div class="cart-item-category">${item.category}</div>
+            <h4 class="cart-item-title">
+              <a href="product-details.html?id=${item.id}">${item.title}</a>
+            </h4>
+            <div style="font-size:0.85rem; color:var(--text-muted);">
+              Unit Price: $${item.price.toFixed(2)}
+            </div>
+          </div>
+          <div class="quantity-stepper">
+            <button class="stepper-btn" onclick="modifyItemQty('${item.id}', -1)">−</button>
+            <input type="text" class="stepper-input" value="${item.quantity}" readonly>
+            <button class="stepper-btn" onclick="modifyItemQty('${item.id}', 1)">+</button>
+          </div>
+          <div class="cart-item-price">
+            $${(item.price * item.quantity).toFixed(2)}
+          </div>
+          <button class="btn-icon" onclick="removeItem('${item.id}')" title="Remove Item" style="color:var(--danger); border-color:var(--border);">
+            🗑️
+          </button>
+        </div>
+      `).join('');
+
+      // Update Summary Totals
+      const totals = window.cartManager.calculateTotals();
+
+      document.getElementById('summarySubtotal').textContent = `$${totals.subtotal.toFixed(2)}`;
+      
+      const discountRow = document.getElementById('summaryDiscountRow');
+      if (totals.discount > 0) {
+        discountRow.style.display = 'flex';
+        document.getElementById('summaryDiscountLabel').textContent = `Discount (${totals.appliedCoupon.code})`;
+        document.getElementById('summaryDiscount').textContent = `-$${totals.discount.toFixed(2)}`;
+      } else {
+        discountRow.style.display = 'none';
+      }
+
+      document.getElementById('summaryShipping').textContent = totals.shipping === 0 ? 'FREE' : `$${totals.shipping.toFixed(2)}`;
+      document.getElementById('summaryTax').textContent = `$${totals.tax.toFixed(2)}`;
+      document.getElementById('summaryTotal').textContent = `$${totals.total.toFixed(2)}`;
+    }
+
+    function modifyItemQty(id, delta) {
+      const items = window.cartManager.getItems();
+      const item = items.find(i => i.id === id);
+      if (item) {
+        window.cartManager.updateQuantity(id, item.quantity + delta);
+        renderCart();
+      }
+    }
+
+    function removeItem(id) {
+      window.cartManager.removeItem(id);
+      renderCart();
+    }
+  </script>
+</body>
+</html>

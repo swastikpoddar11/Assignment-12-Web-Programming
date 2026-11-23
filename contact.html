@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Support | NovaTech</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div>🚀 Special Launch Offer: Use coupon code <strong>NOVA20</strong> for 20% off all orders!</div>
+      <div><a href="contact.html">Need Help? Contact Support</a></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">⚡</span>
+        <span>NovaTech</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="cart.html" class="nav-link">Cart</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div id="userNavSlot"></div>
+        <a href="cart.html" class="btn-icon" aria-label="Shopping Cart">
+          <span>🛒</span>
+          <span class="cart-badge" style="display:none;">0</span>
+        </a>
+        <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Breadcrumbs -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span style="color:var(--text-main); font-weight:600;">Contact &amp; Support</span>
+      </div>
+      <h1 style="font-family:var(--font-display); font-size:2.2rem; font-weight:700;">Get In Touch With Our Team</h1>
+      <p style="color:var(--text-muted);">Have questions about our XML catalog, product warranty, or orders? We're available 24/7.</p>
+    </div>
+  </section>
+
+  <!-- Contact Page Content -->
+  <main class="container">
+    <div class="contact-layout">
+      <!-- Contact Info & FAQ Column -->
+      <div>
+        <h2 style="font-family:var(--font-display); font-size:1.6rem; font-weight:700; margin-bottom:1rem;">
+          Customer Service Channels
+        </h2>
+
+        <div class="contact-info-list">
+          <div class="contact-info-card">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4 style="font-weight:700; margin-bottom:0.25rem;">Global Headquarters</h4>
+              <p style="color:var(--text-muted); font-size:0.9rem;">450 Mission Street, Suite 1200<br>San Francisco, CA 94105, USA</p>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4 style="font-weight:700; margin-bottom:0.25rem;">Direct Phone &amp; WhatsApp</h4>
+              <p style="color:var(--text-muted); font-size:0.9rem;">+1 (800) 555-NOVA (Toll Free)<br>Mon - Sat: 8:00 AM - 9:00 PM EST</p>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <h4 style="font-weight:700; margin-bottom:0.25rem;">Email Support</h4>
+              <p style="color:var(--text-muted); font-size:0.9rem;">support@novatech-store.com<br>Response guaranteed within 2 hours</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div style="margin-top:3rem;">
+          <h3 style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; margin-bottom:1rem;">
+            Frequently Asked Questions
+          </h3>
+
+          <div class="faq-accordion">
+            <div class="faq-item open">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <span>How is the product catalog powered by XML?</span>
+                <span>▼</span>
+              </button>
+              <div class="faq-answer">
+                Our entire products catalog is loaded dynamically from <code>data/products.xml</code> using JavaScript's <code>DOMParser</code> and standard XML DOM traversal methods (<code>getElementsByTagName</code>, <code>getAttribute</code>). This enables clean separation of product data and presentation.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <span>What are the shipping delivery timeframes?</span>
+                <span>▼</span>
+              </button>
+              <div class="faq-answer">
+                Express shipping takes 1 to 2 business days, while standard courier delivery takes 3 to 5 business days. All orders over $150 qualify for automated free express delivery.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <span>What is the 30-day money-back guarantee policy?</span>
+                <span>▼</span>
+              </button>
+              <div class="faq-answer">
+                If you are not 100% satisfied with your hardware purchase, you can initiate a return within 30 days of receiving your package for a complete refund or exchange.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Are transactions and payment methods secure?</span>
+                <span>▼</span>
+              </button>
+              <div class="faq-answer">
+                Yes, our checkout engine features end-to-end 256-bit encryption with support for credit/debit cards, instant UPI QR transfers, and Cash on Delivery.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Contact Form -->
+      <div>
+        <div class="checkout-card">
+          <h3 style="font-family:var(--font-display); font-size:1.5rem; font-weight:700; margin-bottom:0.5rem;">
+            Send Us a Message
+          </h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem;">
+            Fill out the form below and an engineer or support agent will reply promptly.
+          </p>
+
+          <form id="contactForm" onsubmit="handleContactSubmit(event)">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="contactName">Your Name *</label>
+                <input type="text" id="contactName" class="form-control" placeholder="Jane Doe" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactEmail">Email Address *</label>
+                <input type="email" id="contactEmail" class="form-control" placeholder="jane@example.com" required>
+              </div>
+
+              <div class="form-group form-group-full">
+                <label class="form-label" for="contactSubject">Inquiry Department *</label>
+                <select id="contactSubject" class="form-control" required>
+                  <option value="Product Specs Inquiry">Hardware &amp; XML Catalog Inquiry</option>
+                  <option value="Order Status">Order Tracking &amp; Delivery</option>
+                  <option value="Warranty & Returns">Warranty &amp; Returns</option>
+                  <option value="Technical Support">Technical Troubleshooting</option>
+                  <option value="Partnership">Wholesale &amp; Business Inquiries</option>
+                </select>
+              </div>
+
+              <div class="form-group form-group-full">
+                <label class="form-label" for="contactOrderNum">Order ID (Optional)</label>
+                <input type="text" id="contactOrderNum" class="form-control" placeholder="e.g. NT-492810">
+              </div>
+
+              <div class="form-group form-group-full">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <label class="form-label" for="contactMessage">Your Message *</label>
+                  <span id="charCount" style="font-size:0.75rem; color:var(--text-muted);">0 / 500</span>
+                </div>
+                <textarea id="contactMessage" class="form-control" rows="5" placeholder="Please describe how we can assist you..." maxlength="500" required></textarea>
+              </div>
+            </div>
+
+            <button type="submit" id="contactSubmitBtn" class="btn btn-primary btn-lg btn-block" style="margin-top:1.5rem;">
+              ✉️ Send Message
+            </button>
+          </form>
+
+          <!-- Success Alert Card -->
+          <div id="contactSuccessCard" style="display:none; text-align:center; padding:2rem 1rem; background:var(--success-bg); border:1px solid rgba(16,185,129,0.3); border-radius:var(--radius-md); margin-top:1.5rem;">
+            <div style="font-size:2.5rem; margin-bottom:0.5rem;">✅</div>
+            <h4 style="font-weight:700; color:var(--success); margin-bottom:0.5rem;">Message Dispatched!</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Thank you! Our support staff has received your inquiry and will follow up via email.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>⚡ NovaTech</h3>
+        <p style="margin-bottom:1.25rem;">
+          Architecting next-generation shopping experiences using clean HTML5, CSS3, modern ES6 JavaScript, and client-side XML DOM parsing.
+        </p>
+        <span class="badge badge-primary">XML DOM Powered</span>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">All Products</a>
+          <a href="cart.html">Shopping Cart</a>
+          <a href="checkout.html">Checkout</a>
+          <a href="contact.html">Support &amp; FAQ</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Customer Area</h4>
+        <div class="footer-links">
+          <a href="auth.html">Sign In / Register</a>
+          <a href="cart.html">View My Cart</a>
+          <a href="contact.html">Order Tracking</a>
+          <a href="contact.html">Returns Policy</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Tech Specs</h4>
+        <p style="font-size:0.85rem; margin-bottom:1rem;">
+          Data source: <code>data/products.xml</code><br>
+          Parser: <code>DOMParser (text/xml)</code><br>
+          State: <code>LocalStorage</code>
+        </p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div>&copy; 2026 NovaTech Inc. All rights reserved. Professional E-Commerce Engineering.</div>
+      <div>Designed with HTML5, CSS3, JavaScript &amp; XML.</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/xml-loader.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Pre-fill user if logged in
+      const user = window.authManager.getCurrentUser();
+      if (user) {
+        document.getElementById('contactName').value = user.name;
+        document.getElementById('contactEmail').value = user.email;
+      }
+
+      // Live character counter
+      const textarea = document.getElementById('contactMessage');
+      const counter = document.getElementById('charCount');
+      textarea.addEventListener('input', () => {
+        counter.textContent = `${textarea.value.length} / 500`;
+      });
+    });
+
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      item.classList.toggle('open');
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('contactSubmitBtn');
+      btn.disabled = true;
+      btn.textContent = 'Transmitting message...';
+
+      setTimeout(() => {
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('contactSuccessCard').style.display = 'block';
+        showToast('Your message was received! Reference #TKT-782', 'success');
+      }, 900);
+    }
+  </script>
+</body>
+</html>

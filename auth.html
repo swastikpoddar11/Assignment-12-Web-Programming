@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In / Register | NovaTech</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div>🚀 Special Launch Offer: Use coupon code <strong>NOVA20</strong> for 20% off all orders!</div>
+      <div><a href="contact.html">Need Help? Contact Support</a></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">⚡</span>
+        <span>NovaTech</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="cart.html" class="nav-link">Cart</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div id="userNavSlot"></div>
+        <a href="cart.html" class="btn-icon" aria-label="Shopping Cart">
+          <span>🛒</span>
+          <span class="cart-badge" style="display:none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Auth Wrapper -->
+  <main class="container auth-wrapper">
+    <div class="auth-card">
+      <!-- Tab Switcher -->
+      <div class="auth-tabs">
+        <button id="tabSignInBtn" class="auth-tab-btn active" onclick="switchAuthTab('login')">
+          Sign In
+        </button>
+        <button id="tabSignUpBtn" class="auth-tab-btn" onclick="switchAuthTab('register')">
+          Create Account
+        </button>
+      </div>
+
+      <!-- Demo Credentials Helper Box -->
+      <div class="demo-account-box" id="demoHelperBox">
+        <div>
+          <strong>Demo Account:</strong><br>
+          <span style="font-family:monospace; color:var(--text-muted);">alex@example.com / password123</span>
+        </div>
+        <button type="button" class="btn-sm btn-primary" onclick="fillDemoCredentials()">
+          1-Click Fill
+        </button>
+      </div>
+
+      <!-- Notification alert -->
+      <div id="authAlert" style="display:none; padding:0.75rem; border-radius:var(--radius-md); font-size:0.85rem; margin-bottom:1rem;"></div>
+
+      <!-- Sign In Form -->
+      <form id="signInForm" onsubmit="handleLogin(event)">
+        <div class="form-group" style="margin-bottom:1.25rem;">
+          <label class="form-label" for="loginEmail">Email Address</label>
+          <input type="email" id="loginEmail" class="form-control" placeholder="alex@example.com" required>
+        </div>
+
+        <div class="form-group" style="margin-bottom:1.25rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <label class="form-label" for="loginPassword">Password</label>
+            <a href="javascript:void(0)" onclick="alert('Demo reset instructions sent to your email!')" style="font-size:0.8rem; color:var(--primary);">Forgot?</a>
+          </div>
+          <div style="position:relative;">
+            <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required>
+            <button type="button" onclick="togglePassVisibility('loginPassword', this)" style="position:absolute; right:12px; top:50%; transform:translateY(-50%); color:var(--text-muted); font-size:0.9rem;">
+              👁️
+            </button>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1.5rem; font-size:0.85rem;">
+          <input type="checkbox" id="rememberMe" checked>
+          <label for="rememberMe" style="color:var(--text-muted);">Keep me signed in on this device</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg">
+          Sign In ➔
+        </button>
+      </form>
+
+      <!-- Register Form (Hidden by default) -->
+      <form id="registerForm" onsubmit="handleRegister(event)" style="display:none;">
+        <div class="form-group" style="margin-bottom:1.25rem;">
+          <label class="form-label" for="regName">Full Name</label>
+          <input type="text" id="regName" class="form-control" placeholder="Alex Rivera" required>
+        </div>
+
+        <div class="form-group" style="margin-bottom:1.25rem;">
+          <label class="form-label" for="regEmail">Email Address</label>
+          <input type="email" id="regEmail" class="form-control" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group" style="margin-bottom:1.25rem;">
+          <label class="form-label" for="regPassword">Password (Min. 6 chars)</label>
+          <input type="password" id="regPassword" class="form-control" placeholder="••••••••" minlength="6" required>
+        </div>
+
+        <div class="form-group" style="margin-bottom:1.5rem;">
+          <label class="form-label" for="regPasswordConfirm">Confirm Password</label>
+          <input type="password" id="regPasswordConfirm" class="form-control" placeholder="••••••••" minlength="6" required>
+        </div>
+
+        <div style="display:flex; align-items:flex-start; gap:0.5rem; margin-bottom:1.5rem; font-size:0.85rem;">
+          <input type="checkbox" id="agreeTerms" required style="margin-top:4px;">
+          <label for="agreeTerms" style="color:var(--text-muted);">
+            I agree to the <a href="#" style="color:var(--primary); text-decoration:underline;">Terms of Service</a> and <a href="#" style="color:var(--primary); text-decoration:underline;">Privacy Policy</a>.
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg">
+          Create Account ➔
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>⚡ NovaTech</h3>
+        <p style="margin-bottom:1.25rem;">
+          Architecting next-generation shopping experiences using clean HTML5, CSS3, modern ES6 JavaScript, and client-side XML DOM parsing.
+        </p>
+        <span class="badge badge-primary">XML DOM Powered</span>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">All Products</a>
+          <a href="cart.html">Shopping Cart</a>
+          <a href="checkout.html">Checkout</a>
+          <a href="contact.html">Support &amp; FAQ</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Customer Area</h4>
+        <div class="footer-links">
+          <a href="auth.html">Sign In / Register</a>
+          <a href="cart.html">View My Cart</a>
+          <a href="contact.html">Order Tracking</a>
+          <a href="contact.html">Returns Policy</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Tech Specs</h4>
+        <p style="font-size:0.85rem; margin-bottom:1rem;">
+          Data source: <code>data/products.xml</code><br>
+          Parser: <code>DOMParser (text/xml)</code><br>
+          State: <code>LocalStorage</code>
+        </p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div>&copy; 2026 NovaTech Inc. All rights reserved. Professional E-Commerce Engineering.</div>
+      <div>Designed with HTML5, CSS3, JavaScript &amp; XML.</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/xml-loader.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function switchAuthTab(tab) {
+      const signInBtn = document.getElementById('tabSignInBtn');
+      const signUpBtn = document.getElementById('tabSignUpBtn');
+      const signInForm = document.getElementById('signInForm');
+      const registerForm = document.getElementById('registerForm');
+      const demoBox = document.getElementById('demoHelperBox');
+      const alertBox = document.getElementById('authAlert');
+
+      alertBox.style.display = 'none';
+
+      if (tab === 'login') {
+        signInBtn.classList.add('active');
+        signUpBtn.classList.remove('active');
+        signInForm.style.display = 'block';
+        registerForm.style.display = 'none';
+        demoBox.style.display = 'flex';
+      } else {
+        signUpBtn.classList.add('active');
+        signInBtn.classList.remove('active');
+        signInForm.style.display = 'none';
+        registerForm.style.display = 'block';
+        demoBox.style.display = 'none';
+      }
+    }
+
+    function fillDemoCredentials() {
+      document.getElementById('loginEmail').value = 'alex@example.com';
+      document.getElementById('loginPassword').value = 'password123';
+      showToast('Demo credentials pre-filled!', 'success');
+    }
+
+    function togglePassVisibility(inputId, btn) {
+      const input = document.getElementById(inputId);
+      if (input.type === 'password') {
+        input.type = 'text';
+        btn.textContent = '🙈';
+      } else {
+        input.type = 'password';
+        btn.textContent = '👁️';
+      }
+    }
+
+    function showAlert(msg, isSuccess) {
+      const el = document.getElementById('authAlert');
+      el.style.display = 'block';
+      el.style.background = isSuccess ? 'var(--success-bg)' : 'var(--danger-bg)';
+      el.style.color = isSuccess ? 'var(--success)' : 'var(--danger)';
+      el.style.border = `1px solid ${isSuccess ? 'rgba(16,185,129,0.3)' : 'rgba(239,68,68,0.3)'}`;
+      el.textContent = msg;
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const pass = document.getElementById('loginPassword').value;
+
+      const res = window.authManager.login(email, pass);
+      if (res.success) {
+        showAlert(`Welcome back, ${res.user.name}! Redirecting...`, true);
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 1000);
+      } else {
+        showAlert(res.message, false);
+      }
+    }
+
+    function handleRegister(e) {
+      e.preventDefault();
+      const name = document.getElementById('regName').value;
+      const email = document.getElementById('regEmail').value;
+      const pass = document.getElementById('regPassword').value;
+      const passConf = document.getElementById('regPasswordConfirm').value;
+
+      if (pass !== passConf) {
+        showAlert('Passwords do not match.', false);
+        return;
+      }
+
+      const res = window.authManager.register(name, email, pass);
+      if (res.success) {
+        showAlert(`Account created successfully! Welcome, ${res.user.name}.`, true);
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 1200);
+      } else {
+        showAlert(res.message, false);
+      }
+    }
+  </script>
+</body>
+</html>

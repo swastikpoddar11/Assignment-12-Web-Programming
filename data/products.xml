@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+  <metadata>
+    <storeName>NovaTech Store</storeName>
+    <currency>USD</currency>
+    <lastUpdated>2026-11-23</lastUpdated>
+  </metadata>
+
+  <categories>
+    <category id="audio">Audio &amp; Headphones</category>
+    <category id="laptops">Computers &amp; Laptops</category>
+    <category id="wearables">Smart Wearables</category>
+    <category id="photography">Cameras &amp; Gear</category>
+    <category id="accessories">Accessories</category>
+  </categories>
+
+  <products>
+    <product id="PROD-101">
+      <title>AeroSound ANC Pro Wireless Headphones</title>
+      <category>audio</category>
+      <price>249.99</price>
+      <originalPrice>299.99</originalPrice>
+      <rating>4.8</rating>
+      <reviewsCount>142</reviewsCount>
+      <stock>24</stock>
+      <featured>true</featured>
+      <badge>Best Seller</badge>
+      <image>https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&amp;auto=format&amp;fit=crop&amp;q=80</image>
+      <description>Experience studio-grade active noise cancellation with 40-hour battery life, spatial audio calibration, and ultra-plush memory foam earcups.</description>
+      <features>
+        <feature>Hybrid Active Noise Cancellation (40dB reduction)</feature>
+        <feature>Hi-Res Wireless Audio with LDAC support</feature>
+        <feature>45 hours playtime with fast USB-C charge</feature>
+        <feature>Multipoint connection for seamless device switching</feature>
+      </features>
+      <specs>
+        <spec name="Driver Size">40mm Titanium</spec>
+        <spec name="Bluetooth">Version 5.3</spec>
+        <spec name="Weight">255g</spec>
+        <spec name="Warranty">2 Years Manufacturer</spec>
+      </specs>
+    </product>
+
+    <product id="PROD-102">
+      <title>ZenBook Ultra 14 OLED Laptop</title>
+      <category>laptops</category>
+      <price>1299.00</price>
+      <originalPrice>1449.00</originalPrice>
+      <rating>4.9</rating>
+      <reviewsCount>89</reviewsCount>
+      <stock>12</stock>
+      <featured>true</featured>
+      <badge>Editor's Choice</badge>
+      <image>https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&amp;auto=format&amp;fit=crop&amp;q=80</image>
+      <description>Sleek ultraportable powered by latest 16-core processor, vivid 2.8K 120Hz OLED display, and all-day battery crafted in precision aerospace aluminum.</description>
+      <features>
+        <feature>14.0-inch 2.8K (2880 x 1800) 120Hz OLED Screen</feature>
+        <feature>32GB LPDDR5X RAM &amp; 1TB Gen4 NVMe SSD</feature>
+        <feature>Intel Core Ultra 7 Processor with dedicated AI NPU</feature>
+        <feature>Ultra-lightweight 1.18kg magnesium alloy chassis</feature>
+      </features>
+      <specs>
+        <spec name="Processor">Intel Core Ultra 7 155H</spec>
+        <spec name="RAM">32GB LPDDR5X</spec>
+        <spec name="Storage">1TB NVMe PCIe 4.0</spec>
+        <spec name="Battery">75Wh (Up to 15 hours)</spec>
+      </specs>
+    </product>
+
+    <product id="PROD-103">
+      <title>Apex Titan Smartwatch Ultra 2</title>
+      <category>wearables</category>
+      <price>379.50</price>
+      <originalPrice>429.00</originalPrice>
+      <rating>4.7</rating>
+      <reviewsCount>210</reviewsCount>
+      <stock>35</stock>
+      <featured>true</featured>
+      <badge>New Release</badge>
+      <image>https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&amp;auto=format&amp;fit=crop&amp;q=80</image>
+      <description>Rugged titanium case with sapphire crystal, dual-frequency GPS, ECG &amp; blood oxygen sensors, and 100m water resistance for extreme adventure.</description>
+      <features>
+        <feature>Grade 5 Titanium bezel with Sapphire Crystal glass</feature>
+        <feature>Dual-frequency L1/L5 Precision GPS navigation</feature>
+        <feature>Continuous health monitoring: ECG, SpO2, and Sleep Stages</feature>
+        <feature>14-day battery life on standard mode</feature>
+      </features>
+      <specs>
+        <spec name="Display">1.96-inch AMOLED Always-On</spec>
+        <spec name="Water Resistance">10 ATM (100 meters)</spec>
+        <spec name="Case Material">Aerospace Grade Titanium</spec>
+        <spec name="Compatibility">iOS &amp; Android</spec>
+      </specs>
+    </product>
+
+    <product id="PROD-104">
+      <title>Lumix Lumina 4K Mirrorless Camera</title>
+      <category>photography</category>
+      <price>949.00</price>
+      <originalPrice>1099.00</originalPrice>
+      <rating>4.6</rating>
+      <reviewsCount>64</reviewsCount>
+      <stock>8</stock>
+      <featured>false</featured>
+      <badge>Special Offer</badge>
+      <image>https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&amp;auto=format&amp;fit=crop&amp;q=80</image>
+      <description>Compact full-featured 26MP hybrid camera featuring 4K 60p uncropped video, 5-axis sensor stabilization, and real-time AI subject tracking autofocus.</description>
+      <features>
+        <feature>26.1MP BSI CMOS Sensor with zero optical low-pass filter</feature>
+        <feature>6.5-stop in-body image stabilization (IBIS)</feature>
+        <feature>4K 60p 10-bit internal video recording</feature>
+        <feature>Dual SD UHS-II card slots</feature>
+      </features>
+      <specs>
+        <spec name="Sensor">26.1MP APS-C X-Trans CMOS</spec>
+        <spec name="Lens Mount">E-Mount compatible</spec>
+        <spec name="ISO Range">100 - 51200</spec>
+        <spec name="Weight">465g (Body only)</spec>
+      </specs>
+    </product>
+
+    <product id="PROD-105">
+      <title>SonicPulse Mini Bluetooth Speaker</title>
+      <category>audio</category>
+      <price>69.99</price>
+      <originalPrice>89.99</originalPrice>
+      <rating>4.5</rating>
+      <reviewsCount>380</reviewsCount>
+      <stock>50</stock>
+      <featured>false</featured>
+      <badge>Popular</badge>
+      <image>https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800&amp;auto=format&amp;fit=crop&amp;q=80</image>
+      <description>Punchy 360-degree sound with deep bass reflex, IP67 waterproof protection, and party-sync mode to connect up to 50 speakers together.</description>
+      <features>
+        <feature>360-degree room-filling acoustic profile</feature>
+        <feature>IP67 Waterproof, dustproof and floatable</feature>
+        <feature>18-hour continuous battery life</feature>
+        <feature>Built-in microphone with echo cancellation for calls</feature>
+      </features>
+      <specs>
+        <spec name="Power Output">25W RMS</spec>
+        <spec name="Battery">5200mAh Li-ion</spec>
+        <spec name="Dimensions">85 x 85 x 180 mm</spec>
+        <spec name="Weight">520g</spec>
+      </specs>
+    </product>
+
+    <product id="PROD-106">
+      <title>MagGrid 3-in-1 Fast Wireless Stand</title>
+      <category>accessories</category>
+      <price>49.99</price>
+      <originalPrice>59.99</originalPrice>
+      <rating>4.6</rating>
+      <reviewsCount>112</reviewsCount>
+      <stock>45</stock>
+      <featured>false</featured>
+      <badge>Hot Deal</badge>
+      <image>https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=800&amp;auto=format&amp;fit=crop&amp;q=80</image>
+      <description>Streamline your nightstand or desk. Fast wireless charging for phone, smartwatch, and earbuds simultaneously with aluminum alloy build and safety chip.</description>
+      <features>
+        <feature>Simultaneous 15W + 5W + 3W magnetic fast charging</feature>
+        <feature>Foldable travel-ready design with silicone base</feature>
+        <feature>Intelligent thermal and overvoltage surge protection</feature>
+        <feature>Adjustable viewing angle for video calls and nightstand mode</feature>
+      </features>
+      <specs>
+        <spec name="Input">USB-C PD 30W (Adapter included)</spec>
+        <spec name="Material">Anodized Aluminum &amp; Silicone</spec>
+        <spec name="Weight">210g</spec>
+        <spec name="Certification">Qi-certified, CE, FCC</spec>
+      </specs>
+    </product>
+
+    <product id="PROD-107">
+      <title>ProArt 27-inch 4K Studio Display</title>
+      <category>laptops</category>
+      <price>589.00</price>
+      <originalPrice>699.00</originalPrice>
+      <rating>4.8</rating>
+      <reviewsCount>77</reviewsCount>
+      <stock>16</stock>
+      <featured>true</featured>
+      <badge>Top Rated</badge>
+      <image>https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&amp;auto=format&amp;fit=crop&amp;q=80</image>
+      <description>Factory color-calibrated 4K UHD IPS display featuring 100% sRGB, 98% DCI-P3 color gamuts, USB-C 90W power delivery, and ergonomic pivot stand.</description>
+      <features>
+        <feature>3840 x 2160 UHD IPS anti-glare panel</feature>
+        <feature>Delta E &lt; 2 factory calibrated color fidelity</feature>
+        <feature>Single USB-C cable for video, data and 90W laptop charge</feature>
+        <feature>Height, tilt, swivel, and 90-degree pivot adjustment</feature>
+      </features>
+      <specs>
+        <spec name="Panel Type">IPS with W-LED backlight</spec>
+        <spec name="Refresh Rate">75Hz FreeSync</spec>
+        <spec name="Ports">HDMI 2.1, DP 1.4, USB-C, 4x USB 3.2</spec>
+        <spec name="HDR">VESA DisplayHDR 400</spec>
+      </specs>
+    </product>
+
+    <product id="PROD-108">
+      <title>Vanguard Cyber Mechanical Keyboard</title>
+      <category>accessories</category>
+      <price>129.99</price>
+      <originalPrice>159.99</originalPrice>
+      <rating>4.9</rating>
+      <reviewsCount>195</reviewsCount>
+      <stock>28</stock>
+      <featured>false</featured>
+      <badge>Gamer Pick</badge>
+      <image>https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&amp;auto=format&amp;fit=crop&amp;q=80</image>
+      <description>Hot-swappable mechanical keyboard featuring gasket-mounted construction, pre-lubed tactile switches, custom PBT dye-sub keycaps, and tri-mode connectivity.</description>
+      <features>
+        <feature>Gasket-mounted sound-dampening acoustic layers</feature>
+        <feature>Hot-swappable 5-pin PCB with south-facing RGB</feature>
+        <feature>Tri-mode: Bluetooth 5.1, 2.4GHz ultra-low latency, USB-C</feature>
+        <feature>4000mAh battery with up to 200 hours backlight-off runtime</feature>
+      </features>
+      <specs>
+        <spec name="Layout">75% Compact (82 Keys + Rotary Knob)</spec>
+        <spec name="Switches">Pre-lubed Cream Tactile 45gf</spec>
+        <spec name="Keycaps">Double-shot PBT Cherry Profile</spec>
+        <spec name="Software">QMK / VIA open-source support</spec>
+      </specs>
+    </product>
+  </products>
+</catalog>
